@@ -65,9 +65,12 @@ class KnightPathFinder
     #     return valid_moves
     # end 
 
+    def track_back_path(end_pos)
+        self.build_move_tree(start_pos)
+    end
+
     def find_path(end_pos)
-        track_back_path(PolyTreeNode.bfs(end_pos))
-        end_pos
+        track_back_path(PolyTreeNode.bfs(end_pos)).reverse # return arr from leaf to root ==> root to leaf
     end
 end 
 #     def build_move_tree(start_position, n = nil) #BFS
