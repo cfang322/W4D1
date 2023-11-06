@@ -65,6 +65,10 @@ class KnightPathFinder
     #     return valid_moves
     # end 
 
+    def find_path(end_pos)
+        track_back_path(PolyTreeNode.bfs(end_pos))
+        end_pos
+    end
 end 
 #     def build_move_tree(start_position, n = nil) #BFS
 #         @considered_positions = [@start_position] #[0,0]
